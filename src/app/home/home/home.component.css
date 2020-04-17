@@ -1,0 +1,103 @@
+.contacts {
+    margin: 0 0 0 0;
+    list-style-type: none;
+    padding: 0;
+    width: 328px;
+    text-align: left;
+    font-size: large;
+    font-family: Helvetica, sans-serif;
+    position: absolute;
+    top: 50px;
+    height: 525px;
+    overflow: scroll;
+    background-color: white;
+}
+.contacts li {
+    line-height: 28px;
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: 2px;
+    padding: 0.5em 1.1em;
+    height: 2.1em;
+    border-radius: 4px;
+}
+.contacts li:hover {
+    background-color: rgb(222, 240, 248);
+    left: .1em;
+}
+.contacts li.selected {
+    background-color: rgb(133, 206, 238);
+}
+.flex-messages {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(222, 240, 248);
+  border-radius: 4px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  height: 485px;
+  width: 930px;
+}
+.sent {
+    background-color: #79fa8b;
+    padding: 8px;
+    width: 500px;
+    height: auto;
+    margin: 3px;
+    font-size: 18px;
+    margin-left: auto;
+    border-radius: 14px;
+    overflow-wrap: break-word;
+}
+.received {
+    background-color: #FAFAFA;
+    padding: 8px;
+    width: 500px;
+    margin: 3px;
+    font-size: 18px;
+    margin-right: auto;
+    border-radius: 14px;
+    overflow-wrap: break-word;
+}
+.send{
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+}
+.send-button {
+    display: inline-block;
+    padding: 8px 25px;
+    font-size: 16.5px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    color: #000;
+    background-color: #facf7f;
+}
+.send-button:active {
+    background-color: #facf7f;
+    transform: translateY(2px);
+}
+.write, .formControl  {
+  position: absolute;
+  bottom: 2px;
+  right: 52px;
+  width: 830px;
+  height: 30px;
+  border-color: rgb(137, 233, 250);
+  font-size: 16.5px;
+  padding: 1px;
+}
+.name{
+  font-size: 12px;
+  font-style: italic;
+}
+.timestamp{
+  font-size: 12px;
+  font-style: italic;
+  float: right;
+}

@@ -1,0 +1,20 @@
+<div *ngIf="authService.user$ | async as user; else blocked ">
+    <div class="navbar">
+        <a href="/home">Home</a>
+        <a style="float: right;"><b>Logged in as: </b><i>{{user.name}}</i></a>
+        <a style="float: right; "href="/logout">Logout</a>
+    </div> 
+</div>
+<router-outlet></router-outlet>
+
+<ng-template #blocked>
+    <div class="navbar">
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </div>
+    <h1 style="text-align: center; color: white;">Welcome to <i>justChat</i></h1>
+    <div style="text-align: center; color: white;">
+       <i>-made by Aman Singh as part of a project assigned by DevCom</i>
+    </div>
+    <br/>
+</ng-template>

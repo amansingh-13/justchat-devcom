@@ -1,0 +1,13 @@
+<div class="authBlock">
+  <h1 style="text-align: center;color: white;">Register on justChat</h1>
+  <input type="email" class="formControl" placeholder="Email ID" #email required>
+      
+  <input type="password" class="formControl" placeholder="Password" #password required>
+      
+  <input type="password" class="formControl" placeholder="Confirm Password" #confirmpassword required>
+      
+  <input type="text" class="formControl" placeholder="Full Name" #name required>
+    
+  <input type="button" class="btn" value="Confirm Registration" 
+  (click)="authService.signupwithemail(email.value, password.value, confirmpassword.value, name.value)">
+</div>

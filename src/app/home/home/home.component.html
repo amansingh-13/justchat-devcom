@@ -1,0 +1,54 @@
+
+<div *ngIf="authService.user$ | async as user; else blocked">
+
+  <ul class="contacts">
+      <li class="text" *ngFor="let listed_user of list_of_users | async"
+      [class.selected]="listed_user === selected_user"
+      (click)="onSelect(listed_user); get_messages(user.uid, listed_user.uid)">
+      <ng-container *ngIf="listed_user.uid === user.uid; else self">
+        <b>SELF CHAT</b>
+        <i>   (To-Do List)</i>
+      </ng-container>
+      <ng-template #self>
+        <b>{{listed_user.name}}</b>
+        <i>   ({{listed_user.email}})</i>
+      </ng-template>
+      </li>
+  </ul>
+
+  <div *ngIf="selected_user">
+    <div class="flex-messages" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+      <ng-container *ngFor="let message of relevant_messages | async" >
+          <div *ngIf="message.members[0] === user.uid; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock>
+          <div class="sent">  
+            <span class="name">You :</span><br/>
+            <b>{{message.text}}</b><br/>
+            <span class="timestamp">{{message.datetime.toMillis() | date:'medium'}}</span><br/>
+          </div>   
+          </ng-template>
+          <ng-template #elseBlock>
+          <div class="received">
+            <span class="name">{{selected_user.name}} :</span><br/>
+            <b>{{message.text}}</b><br/>
+            <span class="timestamp">{{message.datetime.toMillis() | date:'medium'}}</span><br/>
+          </div>
+          </ng-template>
+      </ng-container>
+    </div>
+    <div class="write">
+      <input type="string" class="formControl" id="myForm" 
+      placeholder="Type your message" #text_input required>
+    </div>
+    <div class="send">
+      <input type="button" class="send-button" value="Send" required
+      (click)="send_message(user.uid , selected_user.uid, text_input.value);clear();">
+    </div>
+
+  </div>
+</div>
+
+<ng-template #blocked>
+  <h1 style="text-align: center; color: red;">403 FORBIDDEN</h1>
+  <h2 style="text-align: center; color: white;">Click <a href="/login">here</a> to Login</h2>
+</ng-template>

@@ -1,0 +1,16 @@
+<div *ngIf="authService.user$ | async as user; else blocked">
+<div class="authBlock">
+    <div style="color: white; font-size: 18;">
+        <i>You are currently logged in as:</i><br/><br/>
+        <b>Name: </b>{{user.name}}<br/>
+        <b>Email Id: </b>{{user.email}}<br/><br/><br/><br/>
+        <i>Do you really want to logout?</i><br/><br/>
+    </div>  
+    <button class="btn" (click)="authService.signout()">Yes, Logout</button>
+</div> 
+</div>
+
+<ng-template #blocked>
+    <h1 style="text-align: center; color: red;">403 FORBIDDEN</h1>
+    <h2 style="text-align: center; color: white;">Click <a href="/login">here</a> to Login</h2>
+</ng-template>

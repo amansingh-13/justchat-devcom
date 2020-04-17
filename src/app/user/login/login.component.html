@@ -1,0 +1,9 @@
+<div class="authBlock">
+    <h1  style="text-align: center; color: white;">Login</h1>
+    
+    <input type="email" class="formControl" placeholder="Email ID" #email required>
+    
+    <input type="password" class="formControl" placeholder="Password" #password required>
+    
+    <input type="button" class="btn" value="Log in" (click)="authService.loginwithemail(email.value, password.value)">
+</div>

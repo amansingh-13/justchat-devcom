@@ -1,0 +1,19 @@
+.navbar {
+    overflow: hidden;
+    background-color: rgb(255, 178, 107);
+    border-radius: 6px;
+}
+.navbar a {
+    float: left;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 2px;
+    background-color: rgb(255, 100, 100);
+    border: 0.5px solid rgb(255, 21, 21);
+}
+.navbar a:hover {
+    background-color: rgb(255, 21, 21);
+}
