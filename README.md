@@ -7,4 +7,5 @@ and then execute
 `
 ng serve
 `
-in the project directory. The app will be deployed on `http://localhost:4200/`
+in the project directory.
+<br/>The app will be deployed on `http://localhost:4200/`
