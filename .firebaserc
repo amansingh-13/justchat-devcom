@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "justchat-amansingh"
+  },
+  "targets": {
+    "justchat-amansingh": {
+      "hosting": {
+        "justchat": [
+          "justchat-amansingh"
+        ]
+      }
+    }
+  }
+}
